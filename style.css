@@ -1,0 +1,1120 @@
+/* Variables CSS para las paletas de colores */
+:root {
+    /* Paleta por defecto (similar a Spotify - Dark) */
+    --primary-bg: #121212;
+    --secondary-bg: #1A1A1A;
+    --card-bg: #282828;
+    --text-color: #FFFFFF;
+    --light-text-color: #B3B3B3;
+    --accent-color: #1DB954; /* Verde Spotify */
+    --hover-bg: #333333;
+    --border-color: #333333;
+    --player-bg: #000000;
+}
+
+/* --- Paletas Oscuras --- */
+
+/* Paleta Azul Oscuro (existente) */
+body.dark-blue {
+    --primary-bg: #0A192F;
+    --secondary-bg: #172A45;
+    --card-bg: #1E375C;
+    --text-color: #E6F0FF;
+    --light-text-color: #A8B8D7;
+    --accent-color: #64FFDA; /* Aqua vibrante */
+    --hover-bg: #254067;
+    --border-color: #3B5F8A;
+    --player-bg: #05101E;
+}
+
+/* Paleta Atardecer (existente) */
+body.sunset-gradient {
+    --primary-bg: linear-gradient(to bottom right, #FF7B54, #FFD254); /* Gradiente de naranja a amarillo */
+    --secondary-bg: #E06C4C;
+    --card-bg: #F7886C;
+    --text-color: #FFFFFF;
+    --light-text-color: #FEE7D7;
+    --accent-color: #A03B2A;
+    --hover-bg: #FF9B7F;
+    --border-color: #E25B42;
+    --player-bg: #BF4E39;
+}
+
+/* Paleta Verde Bosque (existente) */
+body.forest-green {
+    --primary-bg: #1B5E20;
+    --secondary-bg: #2E7D32;
+    --card-bg: #388E3C;
+    --text-color: #E8F5E9;
+    --light-text-color: #C8E6C9;
+    --accent-color: #8BC34A;
+    --hover-bg: #4CAF50;
+    --border-color: #66BB6A;
+    --player-bg: #144A18;
+}
+
+/* Nueva: Midnight Purple */
+body.midnight-purple {
+    --primary-bg: #1F0F3D;
+    --secondary-bg: #2F195E;
+    --card-bg: #4A2B82;
+    --text-color: #F0E6FF;
+    --light-text-color: #C0A8E0;
+    --accent-color: #BB86FC; /* Morado claro */
+    --hover-bg: #5B3C9B;
+    --border-color: #6C4DAF;
+    --player-bg: #140A2B;
+}
+
+/* Nueva: Deep Ocean */
+body.deep-ocean {
+    --primary-bg: #0B1C2A;
+    --secondary-bg: #142F46;
+    --card-bg: #1F4569;
+    --text-color: #EBF8FF;
+    --light-text-color: #B4D3E7;
+    --accent-color: #00BCD4; /* Cian brillante */
+    --hover-bg: #2B5780;
+    --border-color: #3C688C;
+    --player-bg: #07121A;
+}
+
+
+/* --- Paletas Claras --- */
+
+/* Nueva: Light Mode Classic */
+body.light-classic {
+    --primary-bg: #F0F2F5; /* Fondo claro */
+    --secondary-bg: #FFFFFF; /* Sidebar/Header más claro */
+    --card-bg: #E7E9ED; /* Fondo de tarjetas */
+    --text-color: #333333;
+    --light-text-color: #666666;
+    --accent-color: #007BFF; /* Azul de acento */
+    --hover-bg: #DDE0E6;
+    --border-color: #CCCCCC;
+    --player-bg: #F0F2F5; /* Reproductor similar al fondo */
+}
+
+/* Nueva: Soft Peach */
+body.soft-peach {
+    --primary-bg: #FFF5EE;
+    --secondary-bg: #FFECE0;
+    --card-bg: #FFDAB9;
+    --text-color: #5C4033;
+    --light-text-color: #8B655C;
+    --accent-color: #FF7043; /* Naranja rojizo */
+    --hover-bg: #FFE4CC;
+    --border-color: #FFC09F;
+    --player-bg: #FFDBBA;
+}
+
+/* Nueva: Mint Fresh */
+body.mint-fresh {
+    --primary-bg: #E8F5E9;
+    --secondary-bg: #F1F8E9;
+    --card-bg: #D4EDDA;
+    --text-color: #2E7D32;
+    --light-text-color: #66BB6A;
+    --accent-color: #4CAF50; /* Verde menta */
+    --hover-bg: #C8E6C9;
+    --border-color: #A5D6A7;
+    --player-bg: #D4EDDA;
+}
+
+/* Nueva: Arctic Mist */
+body.arctic-mist {
+    --primary-bg: #E3F2FD;
+    --secondary-bg: #F0F8FF;
+    --card-bg: #C6E2EE;
+    --text-color: #212121;
+    --light-text-color: #424242;
+    --accent-color: #03A9F4; /* Azul cielo */
+    --hover-bg: #B3DFEE;
+    --border-color: #90CAF9;
+    --player-bg: #C6E2EE;
+}
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--primary-bg); /* Usa la variable para el fondo */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Evita scroll en el body principal */
+}
+
+.container {
+    display: flex;
+    flex: 1; /* Permite que el contenedor principal ocupe el espacio restante */
+    overflow: hidden; /* Oculta el scroll interno si el contenido es muy grande */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Para que esté por encima del contenido principal */
+}
+
+.logo h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.main-nav ul, .playlist-list {
+    list-style: none;
+}
+
+.main-nav li, .playlist-list li {
+    margin-bottom: 10px;
+}
+
+.main-nav a, .playlist-list a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a.active-link { /* Para resaltar el link activo en la sidebar */
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.main-nav a:hover, .playlist-list a:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.main-nav a i, .playlist-list a i {
+    margin-right: 10px;
+    width: 20px; /* Asegura el espaciado consistente para los iconos */
+}
+
+.playlists {
+    margin-top: 30px;
+    flex-grow: 1; /* Permite que la lista de playlists ocupe el espacio restante */
+    overflow-y: auto; /* Permite scroll si hay muchas playlists */
+    padding-right: 10px; /* Espacio para el scrollbar */
+}
+
+.playlists::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlists::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.playlists h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.create-playlist-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.create-playlist-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto; /* Permite scroll si el contenido es muy grande */
+    background-color: var(--primary-bg);
+}
+
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: var(--secondary-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 5; /* Para que esté por encima del contenido al hacer scroll */
+    position: sticky; /* Fija la cabecera al hacer scroll */
+    top: 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    padding: 8px;
+    outline: none;
+    font-size: 16px;
+    width: 300px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.search-bar button:hover {
+    color: var(--text-color);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.user-profile i {
+    font-size: 24px;
+    color: var(--light-text-color);
+}
+
+.music-section h2, .color-palette-section h2,
+.search-results-section h2, .library-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding-bottom: 30px; /* Espacio para el footer */
+}
+
+.song-item {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    position: relative; /* Para el menú de opciones */
+}
+
+.song-item:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-3px);
+}
+
+.song-item.active-song {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+}
+
+.song-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.song-info {
+    flex-grow: 1;
+}
+
+.song-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.song-info p {
+    font-size: 14px;
+    color: var(--light-text-color);
+}
+
+.song-actions {
+    display: flex;
+    gap: 8px;
+    position: relative; /* Para el menú de opciones */
+}
+
+.song-actions button {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.song-actions button:hover {
+    color: var(--accent-color);
+}
+
+/* Estilos para el menú de opciones (3 puntos) */
+.more-options-btn {
+    position: relative;
+    padding: 5px; /* Para hacer el área de clic más grande */
+}
+
+.options-menu {
+    position: absolute;
+    top: 100%; /* Debajo del botón */
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    min-width: 150px;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    display: none; /* Oculto por defecto */
+    flex-direction: column; /* Para que las opciones estén una debajo de otra */
+    padding: 5px 0;
+}
+
+.more-options-btn.active .options-menu {
+    display: flex; /* Mostrar cuando el botón tiene la clase 'active' */
+}
+
+.options-menu span {
+    padding: 10px 15px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.options-menu span:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Estilos para la sección de Biblioteca */
+#library-content .playlist-section {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#library-content .playlist-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#library-content .playlist-section h3 .delete-playlist-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d; /* Un color de peligro para eliminar */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#library-content .playlist-section h3 .delete-playlist-btn:hover {
+    color: #cc0000;
+}
+
+#library-content .playlist-section .playlist-songs-list {
+    list-style: none;
+}
+
+#library-content .playlist-section .playlist-songs-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    gap: 10px;
+}
+
+#library-content .playlist-section .playlist-songs-list li:last-child {
+    border-bottom: none;
+}
+
+#library-content .playlist-section .playlist-songs-list li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+#library-content .playlist-section .playlist-songs-list li .song-info {
+    flex-grow: 1;
+}
+
+#library-content .playlist-section .playlist-songs-list li .song-info h4 {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+#library-content .playlist-section .playlist-songs-list li .song-info p {
+    font-size: 12px;
+    color: var(--light-text-color);
+}
+
+#library-content .playlist-section .playlist-songs-list li .remove-song-btn {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 1em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#library-content .playlist-section .playlist-songs-list li .remove-song-btn:hover {
+    color: #ff4d4d;
+}
+
+
+/* Paleta de Colores */
+.color-palette-section {
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+.palette-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.palette-btn {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.palette-btn:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Footer (Player Bar) - NORMAL MODE */
+.player-bar {
+    background-color: var(--player-bg);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 20; /* Asegura que esté en la parte superior */
+}
+
+/* Normal mode: Show current-song-info as flex, and controls-group as flex */
+.player-bar .player-center-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 200px; /* Asegura que tenga un ancho mínimo para el contenido */
+}
+
+.player-bar .player-controls-group {
+    display: flex;
+    flex-grow: 1; /* Permite que este grupo ocupe el espacio disponible */
+    align-items: center;
+    justify-content: center; /* Centra los controles horizontalmente */
+    gap: 15px; /* Reducido para añadir el botón de cola */
+}
+
+/* Normal mode: Styles for children of player-center-info (which was current-song-info) */
+.player-bar .player-center-info .current-song-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.player-bar .player-center-info .details h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.player-bar .player-center-info .details p {
+    font-size: 13px;
+    color: var(--light-text-color);
+}
+
+
+/* Normal mode: Styles for player controls (buttons, progress bar, volume) */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Importante para el círculo */
+}
+
+.player-controls button:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+
+.player-controls .main-play-pause-btn {
+    font-size: 32px;
+    color: var(--accent-color);
+}
+
+.player-controls .main-play-pause-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* ESTILOS PARA LOS BOTONES SHUFFLE Y REPEAT CUANDO ESTÁN ACTIVOS */
+.player-controls button.active {
+    color: var(--accent-color); /* Cambia a color de acento cuando está activo */
+}
+
+/* Pseudo-elemento para el círculo debajo del botón activo */
+.player-controls button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Ajusta la posición del círculo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px; /* Tamaño del círculo */
+    height: 6px; /* Tamaño del círculo */
+    background-color: var(--accent-color); /* Color del círculo */
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilo específico para el modo "repetir una canción" */
+.player-controls #repeat-btn.active.one::after {
+    content: '1'; /* Muestra un "1" en lugar de un círculo */
+    font-size: 0.7em; /* Tamaño del "1" */
+    color: var(--text-color); /* Color del "1" */
+    width: 15px; /* Ajusta el tamaño para que quepa el "1" */
+    height: 15px; /* Ajusta el tamaño */
+    display: flex; /* Para centrar el "1" */
+    justify-content: center;
+    align-items: center;
+    line-height: 1; /* Alineación vertical del "1" */
+    bottom: 5px; /* Ajusta la posición del "1" más cerca de la esquina */
+    right: -5px; /* Posiciona en la esquina derecha */
+    left: auto; /* Deshabilita el left para que right funcione */
+    transform: none; /* Deshabilita el transform para el centrado */
+}
+
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 350px; /* Ajusta según sea necesario */
+}
+
+.progress-bar {
+    background-color: var(--card-bg);
+    height: 6px;
+    flex-grow: 1;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.progress {
+    background-color: var(--accent-color);
+    height: 100%;
+    width: 0%; /* Por defecto 0% */
+    border-radius: 3px;
+}
+
+.progress-bar-container span {
+    font-size: 12px;
+    color: var(--light-text-color);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 150px;
+    justify-content: flex-end; /* Alinea a la derecha */
+}
+
+.volume-control i {
+    font-size: 18px;
+    color: var(--light-text-color);
+}
+
+.volume-slider {
+    width: 100px;
+    -webkit-appearance: none;
+    background: var(--card-bg);
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+}
+
+
+/* --- ESTILOS PARA PANTALLA COMPLETA Y FONDO BORROSO (ACTUALIZADO COMO EN LAS FOTOS) --- */
+
+body.fullscreen-mode {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja el footer hacia abajo */
+    align-items: center; /* Centra el footer horizontalmente */
+    background: black;
+    position: relative;
+}
+
+body.fullscreen-mode .container {
+    display: none;
+}
+
+.fullscreen-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(80px) brightness(0.4); /* Más borroso y oscuro, como las fotos */
+    transform: scale(1.1);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.7s ease; /* Transición más suave para el fondo */
+    pointer-events: none;
+}
+
+body.fullscreen-mode .fullscreen-background {
+    opacity: 1;
+}
+
+/* Ajustes para la barra de reproductor en modo pantalla completa */
+body.fullscreen-mode .player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Fondo transparente */
+    border-top: none;
+    box-shadow: none;
+    padding: 20px 50px; /* Un poco más de padding */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    gap: 30px; /* Espacio entre los grupos (info y controles) */
+    z-index: 100;
+    /* La transición de transform se aplica a la barra completa,
+        pero usaremos una para el grupo de controles para la animación de ocultar/mostrar */
+}
+
+/* ESTILOS PARA LA IMAGEN Y TEXTO GRANDES */
+body.fullscreen-mode .player-center-info {
+    display: flex;
+    flex-direction: column; /* Apila imagen, título y artista */
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Espacio entre imagen y texto */
+    padding-bottom: 20px; /* Espacio extra debajo de la info de la canción */
+}
+
+body.fullscreen-mode .player-center-info .current-song-img {
+    width: 250px; /* Mucho más grande, como en las fotos */
+    height: 250px;
+    border-radius: 8px; /* Mantiene el borde cuadrado con esquinas redondeadas */
+    object-fit: cover;
+    border: 3px solid white; /* Borde blanco, como en las fotos */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); /* Sombra luminosa blanca */
+}
+
+body.fullscreen-mode .player-center-info .details h3 {
+    font-size: 3.5em; /* Título de la canción mucho más grande */
+    margin-bottom: 10px;
+    color: white; /* Asegura el color blanco */
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Pequeña sombra para mayor legibilidad */
+}
+
+body.fullscreen-mode .player-center-info .details p {
+    font-size: 2em; /* Artista más grande */
+    color: var(--light-text-color); /* Mantiene el color claro */
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+/* OCULTAR EL GRUPO DE CONTROLES COMPLETAMENTE */
+body.fullscreen-mode .player-controls-group {
+    display: flex; /* Asegura que el flexbox siga funcionando cuando está visible */
+    flex-direction: row; /* Vuelve a ser una fila de controles */
+    justify-content: center; /* Centra los controles */
+    align-items: center;
+    width: 100%; /* Ocupa el ancho completo */
+    gap: 30px; /* Espacio entre los controles, progreso y volumen */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+body.fullscreen-mode .player-bar.hidden .player-controls-group {
+    opacity: 0;
+    transform: translateY(50px); /* Desliza hacia abajo al ocultarse */
+    pointer-events: none; /* Deshabilita interacciones cuando está oculta */
+}
+
+/* Asegurar que los botones de control sean grandes y visibles */
+body.fullscreen-mode .player-controls button {
+    font-size: 2.5em; /* Iconos de control más grandes */
+    color: white; /* Color blanco en fullscreen */
+}
+
+body.fullscreen-mode .player-controls .main-play-pause-btn {
+    font-size: 4em; /* Botón principal mucho más grande */
+    color: var(--accent-color); /* Color de acento */
+}
+
+/* Estilos para los botones SHUFFLE y REPEAT en fullscreen cuando están activos */
+body.fullscreen-mode .player-controls button.active {
+    color: var(--accent-color); /* Cambia a color de acento cuando está activo */
+}
+
+body.fullscreen-mode .player-controls button.active::after {
+    background-color: var(--accent-color); /* Color del círculo en fullscreen */
+}
+
+body.fullscreen-mode .player-controls #repeat-btn.active.one::after {
+    background-color: var(--accent-color); /* Color del "1" en fullscreen */
+    color: white; /* Color del texto "1" */
+    bottom: 10px; /* Ajusta la posición del "1" más cerca de la esquina en fullscreen */
+    right: 5px; /* Posiciona en la esquina derecha en fullscreen */
+    left: auto;
+    transform: none;
+}
+
+body.fullscreen-mode .progress-bar-container {
+    width: 60%; /* Barra de progreso más ancha */
+    margin: 0 20px; /* Espaciado horizontal */
+}
+
+body.fullscreen-mode .progress-bar-container span {
+    font-size: 1.2em; /* Tiempo más grande */
+    color: white;
+}
+
+body.fullscreen-mode .volume-control {
+    width: 200px; /* Slider de volumen más ancho */
+}
+
+body.fullscreen-mode .volume-control i {
+    font-size: 1.5em; /* Iconos de volumen más grandes */
+    color: white;
+}
+
+body.fullscreen-mode .volume-slider {
+    height: 6px; /* Slider más grueso */
+    background: rgba(255, 255, 255, 0.3); /* Un poco transparente */
+}
+
+body.fullscreen-mode .volume-slider::-webkit-slider-thumb {
+    width: 18px; /* Thumb más grande */
+    height: 18px;
+    background: var(--accent-color);
+}
+
+body.fullscreen-mode .volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-color);
+}
+
+/* Botón de pantalla completa y botón de cola (queue) */
+.fullscreen-btn, .queue-btn {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.fullscreen-btn:hover, .queue-btn:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+
+/* Ajustes para el botón de cola en fullscreen */
+body.fullscreen-mode .queue-btn {
+    font-size: 2.5em; /* Ajusta el tamaño en fullscreen */
+    color: white; /* Color blanco en fullscreen */
+}
+
+/* --- OVERLAY DE LA FILA DE REPRODUCCIÓN (QUEUE) --- */
+.queue-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px; /* Ancho del overlay */
+    height: 100%;
+    background-color: var(--secondary-bg);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Asegura que esté por encima de todo */
+    transform: translateX(100%); /* Oculto por defecto */
+    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.queue-overlay.visible {
+    transform: translateX(0); /* Mostrar */
+}
+
+.queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--player-bg); /* Un poco más oscuro */
+}
+
+.queue-header h2 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--text-color);
+}
+
+.close-queue-btn {
+    background: none;
+    border: none;
+    color: var(--light-text-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-queue-btn:hover {
+    color: var(--text-color);
+}
+
+.queue-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.queue-content h3 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.queue-content #now-playing-in-queue {
+    border: 2px solid var(--accent-color); /* Resalta la canción actual */
+    box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.queue-song-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.queue-song-item:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Un ligero hover para las canciones en cola */
+}
+
+.queue-song-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.queue-song-item .song-info {
+    flex-grow: 1;
+}
+
+.queue-song-item .song-info h4 {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 3px;
+}
+
+.queue-song-item .song-info p {
+    font-size: 13px;
+    color: var(--light-text-color);
+}
+
+#upcoming-songs-list {
+    list-style: none;
+}
+
+#upcoming-songs-list li {
+    margin-bottom: 10px;
+}
+
+
+/* Responsividad básica (ajusta según tus necesidades) */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 80px; /* Colapsa la sidebar */
+        padding: 10px;
+    }
+    .logo h1 {
+        font-size: 0; /* Oculta el texto */
+        width: 0;
+        overflow: hidden;
+    }
+    .main-nav a, .playlist-list a {
+        padding: 10px 5px;
+        text-align: center;
+    }
+    .main-nav a span, .playlist-list a span { /* Si añades texto */
+        display: none;
+    }
+    .main-nav a i, .playlist-list a i {
+        margin-right: 0;
+    }
+    .playlists h2, .create-playlist-btn span {
+        display: none;
+    }
+    .create-playlist-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-bar input {
+        width: 100%;
+    }
+
+    .song-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    /* Adaptación del player-bar en modo normal para pantallas pequeñas */
+    .player-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .player-bar .player-center-info { /* Ahora .player-center-info es el que se alinea */
+        order: 1; /* Mueve la info de la canción arriba */
+        width: 100%;
+        justify-content: center;
+    }
+    .player-bar .player-controls-group {
+        order: 2;
+        width: 100%;
+        margin-top: 10px;
+        flex-wrap: wrap; /* Permite que los controles internos se envuelvan si es necesario */
+        justify-content: center;
+    }
+    .player-bar .progress-bar-container {
+        width: 80%; /* Más estrecho para móviles */
+        margin: 10px auto 0; /* Centrarlo */
+    }
+    .player-bar .volume-control {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .queue-overlay {
+        width: 100%; /* El overlay ocupa todo */
+    }
+}
